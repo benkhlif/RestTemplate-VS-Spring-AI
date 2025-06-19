@@ -1,9 +1,20 @@
-J’ai récemment testé deux approches pour intégrer des modèles de langage (LLM) comme Ollama dans mon application Spring Boot… et les enseignements sont clairs ! ⚖️ 
+J’ai exploré deux approches pour intégrer un modèle de langage (LLM) comme Ollama dans une application Spring Boot…
 
-🛠️ RestTemplate (approche manuelle) : appel direct à l’API REST d’Ollama. On garde le contrôle, mais on gère soi-même les JSON, les en-têtes HTTP, et tous les détails d’intégration. 
-Résultat : un code sur-mesure, mais fragile, peu réutilisable, et difficile à faire évoluer. 
+🛠️ Approche 1 — RestTemplate (manuelle) // SimpleChatbotController
+➡️ Appels directs à l’API REST d’Ollama
+✅ Contrôle total sur les requêtes, les headers, le format JSON
+❌ Code verbeux, fragile, peu réutilisable, et difficile à maintenir
 
-✨ Spring AI (approche abstraite) : une intégration pensée pour les développeurs. Fini la complexité HTTP, tout est encapsulé dans des composants Spring. Le vrai plus ? La portabilité : on peut passer d’un LLM à un autre (OpenAI, Gemini…) sans revoir toute l’architecture. 
+✨ Approche 2 — Spring AI // SpringAIChatbotController
+➡️ Abstraction native pour les LLM dans l’écosystème Spring
+✅ Intégration fluide, portable entre plusieurs modèles (OpenAI, Gemini, Ollama, etc.)
+✅ Fonctionnalités avancées (Function Calling, RAG...)
+❌ Moins de contrôle bas niveau, mais largement compensé par la productivité
 
-🎯 Mon verdict ? Spring AI l’emporte haut la main. Plus clair, plus propre, plus robuste.
- Et surtout : il ouvre la voie à des fonctionnalités avancées comme le Function Calling (exécution de fonctions Java pilotées par l’IA) 
+🎯 Mon verdict
+Spring AI l’emporte haut la main :
+✔️ Plus propre
+✔️ Plus robuste
+✔️ Plus évolutif
+
+ 
